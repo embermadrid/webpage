@@ -8,12 +8,13 @@
 
 /* titles distance */
 
-$distance: 15%;
+$distance: 12%;
 
 /*fonts */
 
 $roboto: 'Roboto', sans-serif;
 $open: 'Open Sans', sans-serif;
+$slackey: 'Amatic SC', cursive;
 
 /* sprite */
 
@@ -41,7 +42,7 @@ $open: 'Open Sans', sans-serif;
 }   
                   
 .rad { 
-	@include border-radius(3px); 
+	@include border-radius(4px); 
 }
 
 .circle { 
@@ -51,31 +52,65 @@ $open: 'Open Sans', sans-serif;
 /* colors */
 
 $first: #222; /* black text */
-$ember: #e14a30; /* orange */
+$ember: #cf4637; /* orange */
 $second: #aa4b3b; /* dark orange */
 $gris: #666; /* text second */
 
-/* animation css3 */
+/* animation css3 up */
 
-.flash {
-	animation: ratata ease 1.5s both;
-	-webkit-animation: ratata ease 1.5s both;                             
-  -moz-animation: ratata ease 1.5s both;                  
-  -o-animation: ratata ease 1.5s both;   
+.up {
+	animation: ratata ease 1.3s both;
+	-webkit-animation: ratata ease 1.3s both;                             
+  -moz-animation: ratata ease 1.3s both;                  
+  -o-animation: ratata ease 1.3s both;   
 }
 
 @keyframes ratata  {
 	0% { opacity: 0; transform: translateY(1000px); }
 	40% { opacity: 1; transform: translateY(-30px); }
-  60% { transform: translateY(20px); }
-	80% { transform: translateY(-10px); }
+  60% { transform: translateY(30px); }
+	80% { transform: translateY(-20px); }
 	100% { transform: translateY(0); }
 }
 
 @-webkit-keyframes ratata  {
 	0% { opacity: 0; transform: translateY(1000px); }
 	40% { opacity: 1; transform: translateY(-30px); }
-  60% { transform: translateY(20px); }
-	80% { transform: translateY(-10px); }
+  60% { transform: translateY(30px); }
+	80% { transform: translateY(-20px); }
 	100% { transform: translateY(0); }
+}
+
+/* animation css3 opacity */
+
+
+.hello {
+	animation: plas ease 1.3s both;
+	-webkit-animation: plas ease 1.3s both;                             
+  -moz-animation: plas ease 1.3s both;                  
+  -o-animation: plas ease 1.3s both;   
+}
+
+@keyframes plas  {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-webkit-keyframes plas  {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+/* button */
+
+.btn {
+  color: $ember;
+  text-transform: uppercase;
+  font-family: $roboto;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8em;
+  border: 2px solid $ember;
+  padding: 10px 20px;
+  @extend .rad;
 }

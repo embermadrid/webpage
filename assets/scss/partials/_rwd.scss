@@ -1,0 +1,59 @@
+/* desktop */
+
+@media only screen and (max-width: 1024px) {     
+  .c {
+    width: 95% !important;
+  }
+  body {
+    font-size: 60%;
+  }
+  header {
+    display: none;
+  }
+}
+
+/* vertical tablet&smartphone */
+
+
+@media only screen and (max-width: 768px) {     
+  article {
+    padding-bottom: 12%;
+    height: auto !important;
+    section {
+      width: 100%;
+      margin: 0 !important;
+      min-height: inherit !important;
+      float: none;
+    }
+  }
+  a.more {
+    position: relative !important;
+    display: block !important;
+    text-align: center !important;
+    bottom: 0 !important;
+  }
+  .title {
+    position: absolute;
+    a.embermad {
+      margin: 0 auto;
+      position: relative !important;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em !important; 
+      padding: 10px !important;
+    }
+  }
+  footer {
+    ul {
+      li {
+        width: 100%;
+        a.emberfot {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+

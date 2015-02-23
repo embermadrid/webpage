@@ -6,9 +6,9 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<!-- format scss -->
-	<link rel="stylesheet" href="style.css">      
+	<link rel="stylesheet" href="assets/scss/style.css">      
 	<!-- webfont google -->	                      
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,100|Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,100|Open+Sans:400,600|Amatic+SC' rel='stylesheet' type='text/css'>
 </head>
 <body>   
 <header>
@@ -16,12 +16,27 @@
 		<ul>
 			<li>
 				<a href="#">
-					Link
+					Inicio
 				</a>
 			</li>
 			<li>
 				<a href="#">
-					Link
+					Próximo evento
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					Anteriores
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					Sobre nosotros
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					Contacto
 				</a>
 			</li>
 		</ul>
@@ -46,7 +61,7 @@
 			Próximo encuentro
 		</h2>
 		<p>
-			Jueves,o 23 de julio de 2015 (19:00 - 00:00h)
+			Jueves 23 de julio de 2015 (19:00 - 00:00h)
 		</p>
 		<p>
 			<a href="#" class="button">
@@ -66,13 +81,16 @@
 		<h2>
 			Eventos anteriores
 		</h2>
-		<p>
+		<p class="subtitle">
 			2015
 		</p>
 		<div class="slide">
 			<section>
 				<h4>
 					Febrero
+					<span>
+						#01
+					</span>
 				</h4>
 				<h5>
 					Bienvenido a Ember.js
@@ -84,7 +102,7 @@
 					También tendremos alguna sorpresa más.
 				</p>
 				<p>
-					<a href="#" class="btn">
+					<a href="#" class="more">
 						<span>Ver</span> vídeos, slides...
 					</a>
 				</p>
@@ -99,6 +117,9 @@
 				<section>
 					<h4>
 						Marzo
+						<span>
+							#02
+						</span>
 					</h4>
 					<h5>
 						Próximamente
@@ -107,7 +128,7 @@
 						¡Estamos trabajando para montar los próximos eventos!
 					</p>
 					<p>
-						<a href="#" class="btn">
+						<a href="#" class="more">
 							Próximamente
 						</a>
 					</p>
@@ -132,10 +153,10 @@
 		</p>
 	</section>
 	<section>
-		<a href="#">
+		<a href="#" class="people">
 			we are people
 		</a>
-		<a href="#">
+		<a href="#" class="codecantor">
 			codecantor
 		</a>
 	</section>
@@ -156,5 +177,26 @@
 		</p>
 	</section>
 </article><!-- about -->
+<footer>
+	<ul>
+		<li>
+			<a href="#" class="tw">
+				Twitter
+			</a>
+			Follow Twitter
+		</li>
+		<li>
+			<a href="#" class="emberfot">
+				Ember Madrid
+			</a>
+		</li>
+		<li>
+			<a href="#" class="mt">
+				Meetup
+			</a>
+			Conocer comunidad
+		</li>
+	</ul>
+</footer><!-- final footer -->
 </body>
 </html>
