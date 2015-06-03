@@ -25,43 +25,6 @@ body {
   color: $first;
 }
 
-
-/* header */
-
-header {
-  width: 100%;
-  background: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  display: none;
-  ul {
-    @extend .c;
-    overflow: hidden;
-    li {
-      width: 20%;
-      float: left;
-      a {
-        font-family: $roboto;
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.3em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $gris;
-        padding: 15px 0;
-        display: block;
-        @extend .t;
-        &:hover {
-          background: $ember;
-          color: white;
-        }
-      }
-    }
-  }
-}
-
 /* estructure basic */
 
 article {
