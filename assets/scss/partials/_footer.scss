@@ -1,0 +1,68 @@
+footer {
+  padding: 50px 0;
+  background: $ember;
+  .credits {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    a {
+      padding: 0 4px;
+      opacity: 0.6;
+      color: white;
+      @extend .t;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  ul {
+    @extend .c;
+    overflow: hidden;
+    li {
+      font-family: $roboto;
+      letter-spacing: 1px;
+      width: 30%;
+      font-weight: 100;
+      margin-right: 1%;
+      float: left;
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      &:last-child {
+        margin-right: 0 !important;
+      }
+      a {
+        margin-bottom: 10px;
+        display: block;
+        border-color: white;
+        color: white;
+        &.emberfot {
+          @extend .sprite;
+          text-indent: -9999px;
+          width: 230px;
+          height: 225px;
+          background-position: 15px 0;
+        }
+        &.tw, &.mt {
+          width: 220px;
+          margin: 25% auto 10px auto;
+          padding: 20px 0;
+          border: 2px solid white;
+          text-indent: -99999px;
+          @extend .rad;
+          @extend .sprite;
+          @extend .t;
+          &:hover {
+            background-color: black;
+          }
+        }
+        &.tw {
+          background-position: -424px -82px;
+        }
+        &.mt {
+          background-position: -639px -79px;
+        }
+      }
+    }
+  }
+}

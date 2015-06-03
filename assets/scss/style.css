@@ -29,7 +29,7 @@ a img {
   background: transparent url("../img/sprite.png"); }
 
 /* transitions */
-.t, header ul li a, article.welcome .title a.embermad, article.past .events section a.more, article.about section a, footer ul li a.tw, footer ul li a.mt {
+.t, header ul li a, article.welcome .title a.embermad, article.past .events section a.more, article.about section a, footer .credits a, footer ul li a.tw, footer ul li a.mt {
   -webkit-transition: 0.2s ease-in;
   -moz-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
@@ -316,7 +316,8 @@ article {
     article.about h2 {
       padding-top: 12%; }
     article.about section {
-      min-height: 300px; }
+      margin-top: 100px;
+      min-height: 270px; }
       article.about section a {
         display: block;
         width: 220px;
@@ -337,9 +338,20 @@ article {
         color: #666666;
         line-height: 1.5em; }
 
+/* estructure */
 footer {
   padding: 50px 0;
   background: #cf4637; }
+  footer .credits {
+    color: white;
+    font-size: 1.2em;
+    text-align: center; }
+    footer .credits a {
+      padding: 0 4px;
+      opacity: 0.6;
+      color: white; }
+      footer .credits a:hover {
+        opacity: 1; }
   footer ul {
     overflow: hidden; }
     footer ul li {
