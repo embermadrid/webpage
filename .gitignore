@@ -17,3 +17,6 @@ xcuserdata
 # svn & cvs
 .svn
 CVS
+
+node_modules
+bower_components
