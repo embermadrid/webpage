@@ -17,7 +17,7 @@ a img {
   border: 0; }
 
 /* reset format */
-.c, header ul, article.welcome .title, article.past .events, article.about, footer ul {
+.c, article.welcome .title, article.past .events, article.about, header ul, footer ul {
   width: 80%;
   max-width: 900px;
   margin: 0 auto; }
@@ -29,7 +29,7 @@ a img {
   background: transparent url("../img/sprite.png"); }
 
 /* transitions */
-.t, header ul li a, article.welcome .title a.embermad, article.past .events section a.more, article.about section a, footer .credits a, footer ul li a.tw, footer ul li a.mt {
+.t, article.welcome .title a.embermad, article.past .events section a.more, article.about section a, header ul li a, footer .credits a, footer ul li a.tw, footer ul li a.mt {
   -webkit-transition: 0.2s ease-in;
   -moz-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
@@ -121,13 +121,13 @@ a img {
 
 /* button */
 .btn, article.past .events section a.more {
-  color: #cf4637;
+  color: #d73624;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.8em;
-  border: 2px solid #cf4637;
+  border: 2px solid #d73624;
   padding: 10px 20px; }
 
 /* variables */
@@ -151,34 +151,6 @@ body {
   background: white;
   color: #222222; }
 
-/* header */
-header {
-  width: 100%;
-  background: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  display: none; }
-  header ul {
-    overflow: hidden; }
-    header ul li {
-      width: 20%;
-      float: left; }
-      header ul li a {
-        font-family: "Roboto", sans-serif;
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.3em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #666666;
-        padding: 15px 0;
-        display: block; }
-        header ul li a:hover {
-          background: #cf4637;
-          color: white; }
-
 /* estructure basic */
 article {
   width: 100%;
@@ -198,7 +170,7 @@ article {
   article h3 {
     font-size: 2.5em; }
   article.welcome {
-    background: #cf4637 url("../img/welcome-bck.jpg") fixed;
+    background: #d73624 url("../img/welcome-bck.jpg") fixed;
     background-size: cover;
     color: white; }
     article.welcome .title {
@@ -235,12 +207,12 @@ article {
       background-position: -256px 0; }
     article.now p {
       font-size: 3em;
-      color: #666666;
+      color: #888888;
       font-weight: 100; }
   article.past {
     color: white;
     overflow: hidden;
-    background: #cf4637; }
+    background: #d73624; }
     article.past h2, article.past h3, article.past p {
       color: white; }
     article.past .events h2 {
@@ -265,17 +237,17 @@ article {
         font-weight: 300;
         overflow: hidden; }
         article.past .events section h4 span {
-          color: #666666;
+          color: #888888;
           font-size: 1.5em;
           font-family: "Amatic SC", cursive;
           float: right; }
       article.past .events section h5 {
-        color: #cf4637;
+        color: #d73624;
         font-size: 2.2em; }
       article.past .events section p {
         margin: 15px 0;
         font-family: "Open Sans", sans-serif;
-        color: #666666;
+        color: #888888;
         font-size: 1.5em;
         line-height: 1.5em; }
       article.past .events section a.more {
@@ -286,7 +258,7 @@ article {
           text-transform: normal;
           font-size: 0.9em; }
         article.past .events section a.more:hover {
-          background: #cf4637;
+          background: #d73624;
           color: white;
           border-color: #f0f0f0; }
       article.past .events section .footer_detail {
@@ -294,7 +266,7 @@ article {
         position: absolute;
         left: 0;
         bottom: 0;
-        background: #cf4637;
+        background: #d73624;
         height: 50px; }
         article.past .events section .footer_detail .disk {
           width: 30px;
@@ -302,7 +274,7 @@ article {
           display: block;
           margin: -10px auto 0 auto;
           position: relative;
-          background: #cf4637; }
+          background: #d73624; }
           article.past .events section .footer_detail .disk .minidisk {
             top: 10px;
             left: 10px;
@@ -335,13 +307,46 @@ article {
       article.about section p {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5em;
-        color: #666666;
+        color: #888888;
         line-height: 1.5em; }
+
+/* estructure */
+/* header */
+header {
+  width: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.2); }
+  header ul {
+    overflow: hidden; }
+    header ul li {
+      border-right: 1px solid #f0f0f0;
+      width: 20%;
+      float: left;
+      box-sizing: border-box; }
+      header ul li:last-child {
+        border-right: 0 !important; }
+      header ul li a {
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #888888;
+        padding: 20px 0;
+        display: block; }
+        header ul li a:hover {
+          background: #d73624;
+          color: white; }
 
 /* estructure */
 footer {
   padding: 50px 0;
-  background: #cf4637; }
+  background: #d73624; }
   footer .credits {
     color: white;
     font-size: 1.2em;
@@ -392,7 +397,7 @@ footer {
 /* estructure */
 /* desktop */
 @media only screen and (max-width: 1024px) {
-  .c, header ul, article.welcome .title, article.past .events, article.about, footer ul {
+  .c, article.welcome .title, article.past .events, article.about, header ul, footer ul {
     width: 95% !important; }
 
   body {

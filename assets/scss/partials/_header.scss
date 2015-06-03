@@ -1,0 +1,40 @@
+/* header */
+
+header {
+  width: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  border-bottom: 4px solid rgba(0,0,0,0.2);
+  ul {
+    @extend .c;
+    overflow: hidden;
+    li {
+      border-right: 1px solid #f0f0f0;
+      width: 20%;
+      float: left;
+      box-sizing: border-box;
+      &:last-child {
+        border-right: 0 !important;
+      }
+      a {
+        font-family: $roboto;
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $gris;
+        padding: 20px 0;
+        display: block;
+        @extend .t;
+        &:hover {
+          background: $ember;
+          color: white;
+        }
+      }
+    }
+  }
+}
