@@ -25,11 +25,11 @@ a img {
 /* titles distance */
 /*fonts */
 /* sprite */
-.sprite, article.welcome .title a.embermad, article.now .icon_met, article.about section a, footer ul li a.emberfot, footer ul li a.tw, footer ul li a.mt {
+.sprite, article.welcome .title a.embermad, article.now .icon_met, article.about section a.codecantor, article.about section a.people, footer ul li a.emberfot, footer ul li a.tw, footer ul li a.mt {
   background: transparent url("../img/sprite.png"); }
 
 /* transitions */
-.t, article.welcome .title a.embermad, article.past .events section a.more, article.about section a, header ul li a, footer .credits a, footer ul li a.tw, footer ul li a.mt {
+.t, article.welcome .title a.embermad, article.past .events section a.more, article.about section a.codecantor, article.about section a.people, header ul li a, footer .credits a, footer ul li a.tw, footer ul li a.mt {
   -webkit-transition: 0.2s ease-in;
   -moz-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
@@ -290,25 +290,25 @@ article {
     article.about section {
       margin-top: 100px;
       min-height: 270px; }
-      article.about section a {
+      article.about section a.codecantor, article.about section a.people {
         display: block;
         width: 220px;
         height: 105px;
         margin: 0 auto;
         text-indent: -9999px;
         opacity: 0.7; }
-        article.about section a.codecantor {
-          background-position: 0 -236px; }
-        article.about section a.people {
-          margin-top: 50px;
-          background-position: -227px -248px; }
-        article.about section a:hover {
-          opacity: 1; }
+      article.about section a.codecantor {
+        background-position: 0 -236px; }
+      article.about section a.people {
+        margin-top: 50px;
+        background-position: -227px -248px; }
+      article.about section a:hover {
+        opacity: 1; }
       article.about section p {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5em;
         color: #888888;
-        line-height: 1.5em; }
+        line-height: 1.8em; }
 
 /* estructure */
 /* header */
@@ -362,9 +362,8 @@ footer {
     footer ul li {
       font-family: "Roboto", sans-serif;
       letter-spacing: 1px;
-      width: 30%;
+      width: 33%;
       font-weight: 100;
-      margin-right: 1%;
       float: left;
       text-align: center;
       text-transform: uppercase;
@@ -417,7 +416,9 @@ footer {
       float: none; }
 
   a.more {
+    font-size: 1em !important;
     position: relative !important;
+    padding: 20px 0 !important;
     display: block !important;
     text-align: center !important;
     bottom: 0 !important; }

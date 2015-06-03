@@ -1,5 +1,5 @@
 /* general */
-             
+
 body {      
 	font-size: 62.5%;
   font-family: $open;
@@ -12,10 +12,10 @@ body {
 a {      
 	color: $first;
 	&:hover {
-	  text-decoration: none
-	}
+   text-decoration: none
+ }
 }
-   
+
 /* general */      
 
 body {      
@@ -211,14 +211,16 @@ article {
       margin-top: 100px;
       min-height: 270px;
       a {
-        display: block;
-        width: 220px;
-        height: 105px;
-        margin: 0 auto;
-        text-indent: -9999px;
-        opacity: 0.7;
-        @extend .sprite;
-        @extend .t;
+        &.codecantor, &.people {
+          display: block;
+          width: 220px;
+          height: 105px;
+          margin: 0 auto;
+          text-indent: -9999px;
+          opacity: 0.7;
+          @extend .sprite;
+          @extend .t;
+        }
         &.codecantor {
           background-position: 0 -236px;
         }
@@ -234,7 +236,7 @@ article {
         font-family: $open;
         font-size: 1.5em;
         color: $gris;
-        line-height: 1.5em;
+        line-height: 1.8em;
       }
     }
   }
