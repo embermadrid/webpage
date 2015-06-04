@@ -61,9 +61,9 @@ gulp.task('static', function() {
 });
 
 gulp.task('assets', ['static', 'scss', 'scripts']);
-gulp.task('dist', ['fingerprint', 'bower']);
+gulp.task('dist', ['fingerprint', 'bower', 'index']);
 
-gulp.task('fingerprint', ['assets', 'index'], function () {
+gulp.task('fingerprint', ['assets'], function () {
     // by default, gulp would pick `assets/css` as the base,
     // so we need to set it explicitly:
     return gulp.src(['comp/assets/**/**/*'], {base: 'comp/assets'})
@@ -74,7 +74,7 @@ gulp.task('fingerprint', ['assets', 'index'], function () {
         .pipe(gulp.dest('dist/')); // write manifest to build dir
 });
 
-gulp.task('index', function () {
+gulp.task('index', ['fingerprint'], function () {
     // read in our manifest file
     var manifest = JSON.parse(fs.readFileSync('./dist/rev-manifest.json', 'utf8'));
 
@@ -87,12 +87,13 @@ gulp.task('index', function () {
 });
 
 gulp.task('watch', function() {
+  gulp.watch('src/index.hbs', ['index']);
   gulp.watch('src/**/*', ['fingerprint']);
   gulp.watch('comp/**/*', ['fingerprint']);
 });
 
 
-gulp.task('webserver', function() {
+gulp.task('webserver', ['index'], function() {
   gulp.src('./dist')
     .pipe(server({
       livereload: true,
@@ -102,4 +103,4 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('default', ['webserver', 'watch', 'assets', 'bower']);
+gulp.task('default', ['webserver', 'watch', 'assets', 'bower', 'index']);
