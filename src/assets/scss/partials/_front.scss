@@ -49,7 +49,7 @@ article {
     font-size: 2.5em;
   }
   &.welcome {
-    min-height: 700px;
+    height: 100%;
     background: $ember url('../img/welcome-bck.jpg') fixed;
     background-size: cover;
     color: white;
