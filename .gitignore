@@ -20,5 +20,5 @@ CVS
 
 node_modules
 bower_components
-comp
+temp
 dist

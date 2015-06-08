@@ -38,7 +38,7 @@ gulp.task('bower', function() {
     return gulp.src(mainBowerFiles())
     .pipe(uglify())
     .pipe(concat('vendor.min.js'))
-    .pipe(gulp.dest('./comp/assets/js'));
+    .pipe(gulp.dest('./temp/assets/js'));
 });
 
 gulp.task('scripts', function() {
@@ -47,7 +47,7 @@ gulp.task('scripts', function() {
         .pipe(uglify())
         .pipe(concat('app.min.js'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./comp/assets/js'));
+    .pipe(gulp.dest('./temp/assets/js'));
 });
 
 gulp.task('scss', function() {
@@ -56,12 +56,12 @@ gulp.task('scss', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('style.css'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('comp/assets/css'));
+    .pipe(gulp.dest('temp/assets/css'));
 });
 
 gulp.task('static', function() {
     return gulp.src(paths.static, {base: "src"})
-    .pipe(gulp.dest('comp/'))
+    .pipe(gulp.dest('temp/'))
 });
 
 gulp.task('assets', ['static', 'scss', 'scripts']);
@@ -70,7 +70,7 @@ gulp.task('dist', ['fingerprint', 'bower', 'index']);
 gulp.task('fingerprint', ['assets'], function () {
     // by default, gulp would pick `assets/css` as the base,
     // so we need to set it explicitly:
-    return gulp.src(['comp/assets/**/**/*'], {base: 'comp/assets'})
+    return gulp.src(['temp/assets/**/**/*'], {base: 'temp/assets'})
         .pipe(gulp.dest('dist/assets'))  // write rev'd assets to build dir
         .pipe(rev())
         .pipe(gulp.dest('dist/assets'))  // write rev'd assets to build dir
@@ -97,7 +97,7 @@ gulp.task('index', function () {
     return gulp.src('src/index.hbs')
         .pipe(handlebars({}, handlebarOpts))
         .pipe(rename('index.html'))
-        .pipe(gulp.dest('comp/'));
+        .pipe(gulp.dest('temp/'));
 });
 
 gulp.task('watch', function() {
@@ -107,7 +107,7 @@ gulp.task('watch', function() {
 
 
 gulp.task('webserver', ['index'], function() {
-  gulp.src('./comp')
+  gulp.src('./temp/')
     .pipe(server({
       livereload: true,
       defaultFile: 'index.html',
