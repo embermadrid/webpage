@@ -20,7 +20,11 @@ var paths = {
 var handlebarOpts = {
     helpers: {
         assetPath: function (path, context) {
-            return ['/assets', context.data.root[path]].join('/');
+            if(context.data['root'] && context.data.root[path]) {
+                path = context.data.root[path];
+            }
+
+            return ['/assets', path].join('/');
         }
     }
 };
@@ -74,7 +78,7 @@ gulp.task('fingerprint', ['assets'], function () {
         .pipe(gulp.dest('dist/')); // write manifest to build dir
 });
 
-gulp.task('index', ['fingerprint'], function () {
+gulp.task('index fingerprint', ['fingerprint'], function() {
     // read in our manifest file
     var manifest = JSON.parse(fs.readFileSync('./dist/rev-manifest.json', 'utf8'));
 
@@ -84,17 +88,26 @@ gulp.task('index', ['fingerprint'], function () {
         .pipe(handlebars(manifest, handlebarOpts))
         .pipe(rename('index.html'))
         .pipe(gulp.dest('dist/'));
+
+});
+
+gulp.task('index', function () {
+    // read in our handlebars template, compile it using
+    // our manifest, and output it to index.html
+    return gulp.src('src/index.hbs')
+        .pipe(handlebars({}, handlebarOpts))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('comp/'));
 });
 
 gulp.task('watch', function() {
   gulp.watch('src/index.hbs', ['index']);
-  gulp.watch('src/**/*', ['fingerprint']);
-  gulp.watch('comp/**/*', ['fingerprint']);
+  gulp.watch('src/**/*', ['assets']);
 });
 
 
 gulp.task('webserver', ['index'], function() {
-  gulp.src('./dist')
+  gulp.src('./comp')
     .pipe(server({
       livereload: true,
       defaultFile: 'index.html',
