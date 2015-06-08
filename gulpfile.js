@@ -65,7 +65,7 @@ gulp.task('static', function() {
 });
 
 gulp.task('assets', ['static', 'scss', 'scripts']);
-gulp.task('dist', ['fingerprint', 'bower', 'index']);
+gulp.task('dist', ['fingerprint', 'bower', 'index fingerprint']);
 
 gulp.task('fingerprint', ['assets'], function () {
     // by default, gulp would pick `assets/css` as the base,
