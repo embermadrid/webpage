@@ -7,6 +7,10 @@ html, body {
 section, article, header, aside, footer {
 	display: block;
 }
+
+ul, ol {
+	list-style-type: none;
+}
              
 *:focus {
   outline: none;

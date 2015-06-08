@@ -42,7 +42,11 @@ $slackey: 'Amatic SC', cursive;
 }   
                   
 .rad { 
-	@include border-radius(4px); 
+  @include border-radius(4px); 
+}
+
+.btn-pay-border { 
+  @include border-radius(42px); 
 }
 
 .circle { 
@@ -55,6 +59,7 @@ $first: #222; /* black text */
 $ember: #d73624; /* orange */
 $second: #aa4b3b; /* dark orange */
 $gris: #888; /* text second */
+$paybutton: #3992f1; /* button pay */
 
 /* animation css3 up */
 

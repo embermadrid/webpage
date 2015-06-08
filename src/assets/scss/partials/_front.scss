@@ -18,7 +18,7 @@ a {
 
 /* general */      
 
-body {      
+body { 
 	font-size: 62.5%;
   font-family: $open;
   background: white;
@@ -29,7 +29,6 @@ body {
 
 article {
   width: 100%;
-  height: 100%;
   section {
     width: 45%; 
     float: left;
@@ -50,9 +49,29 @@ article {
     font-size: 2.5em;
   }
   &.welcome {
+    height: 100%;
     background: $ember url('../img/welcome-bck.jpg') fixed;
     background-size: cover;
     color: white;
+    p.readmore {
+      a {
+        text-align: center;
+        display: block;
+        font-size: 2em;
+        width: 90%;
+        max-width: 400px;
+        border: 2px solid white;
+        padding: 20px 0;
+        color: white;
+        margin: 30px auto 0 auto !important;
+        text-decoration: none;
+        opacity: 0.8;
+        @extend .t;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
     .title {
       position: relative;
       @extend .c;
@@ -86,20 +105,88 @@ article {
     }
   }
   &.now {
+    padding: $distance 0;
     text-align: center;
-    .icon_met {
+    .meetup {
+      max-width: 800px;
       margin: 0 auto;
-      width: 150px;
-      height: 150px;
-      text-indent: -9999px;
-      @extend .sprite;
-      background-position: -256px 0;
-    }
-    padding-top: $distance;
-    p {
-      font-size: 3em;
-      color: $gris;
-      font-weight: 100;
+      overflow: hidden; 
+      p {
+        line-height: 1.5em;
+        font-size: 1.9em;
+        color: $gris;
+        font-weight: 100;
+        &.pay-stripe {
+          span.stripe-partner {
+            padding-top: 10px;
+            display: block;
+            a {
+              opacity: 0.6;
+              @extend .t;
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+          button {
+            width: 90%;
+            font-family: $open;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 5px solid #f0f0f0;
+            display: block;
+            background: $paybutton;
+            color: white;
+            font-weight: 500;
+            font-size: 1em;
+            padding: 20px 0;
+            @extend .btn-pay-border;
+            @extend .t;
+            &:hover {
+              background: #1267c1;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .two-content {
+        padding: 25px 0;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        .two-content-box {
+          width: 40%;
+          float: left;
+          margin-right: 10%;
+          &:last-child {
+            margin-right: 0;
+          }
+          h3 {
+            padding-bottom: 20px !important;
+          }
+          p {
+            margin: 5px 0;
+            padding: 0;
+          }
+        }
+      }
+      h2 {
+        font-size: 3.5em;
+        span {
+          font-size: 1em;
+          font-family: 'Pacifico', cursive;
+          color: $ember !important;
+          display: block;
+        }
+      }
+      .icon_met {
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        text-indent: -9999px;
+        @extend .sprite;
+        background-position: -256px 0;
+      }
     }
   }
   &.past {

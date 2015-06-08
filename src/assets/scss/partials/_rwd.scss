@@ -15,7 +15,13 @@
 /* vertical tablet&smartphone */
 
 
-@media only screen and (max-width: 768px) {     
+@media only screen and (max-width: 768px) {    
+.two-content {
+        .two-content-box {
+          width: 100% !important;
+          float: none;
+        }
+        } 
   article {
     padding-bottom: 12%;
     height: auto !important;

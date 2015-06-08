@@ -12,7 +12,7 @@ var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 
 var paths = {
-    scss: "src/assets/scss/*.scss",
+    scss: "src/assets/scss/**/*.scss",
     scripts: "src/assets/js/**/*.js",
     static: ["src/assets/img/**/*", "src/assets/partners/**/*"],
 };
@@ -53,7 +53,7 @@ gulp.task('scripts', function() {
 gulp.task('scss', function() {
     return gulp.src(paths.scss)
     .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass())
         .pipe(concat('style.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('temp/assets/css'));
@@ -99,6 +99,7 @@ gulp.task('index', function () {
         .pipe(rename('index.html'))
         .pipe(gulp.dest('temp/'));
 });
+
 
 gulp.task('watch', function() {
   gulp.watch('src/index.hbs', ['index']);
