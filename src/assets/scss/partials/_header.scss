@@ -30,7 +30,7 @@ header {
         padding: 20px 0;
         display: block;
         @extend .t;
-        &:hover {
+        &:hover, &.current {
           background: $ember;
           color: white;
         }
