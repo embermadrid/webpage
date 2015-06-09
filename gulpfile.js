@@ -13,7 +13,7 @@ var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 
 var paths = {
-    scss: "src/assets/scss/**/*.scss",
+    scss: "src/assets/scss/style.scss.hbs",
     scripts: "src/assets/js/**/*.js",
     static: ["src/assets/img/**/*", "src/assets/partners/**/*"],
 };
@@ -66,14 +66,19 @@ gulp.task('scripts comp', function() {
 gulp.task('scss', function() {
     return gulp.src(paths.scss)
     .pipe(sourcemaps.init())
+        .pipe(handlebars({}, handlebarOpts))
         .pipe(sass())
         .pipe(concat('style.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('temp/assets/css'));
 });
 
-gulp.task('scss comp', function() {
+gulp.task('scss comp', ['fingerprint static'], function() {
+    // read in our manifest file
+    var manifest = JSON.parse(fs.readFileSync('./dist/assets/rev-manifest.json', 'utf8'));
+
     return gulp.src(paths.scss)
+    .pipe(handlebars(manifest, handlebarOpts))
     .pipe(sass())
     .pipe(minifyCss())
     .pipe(concat('style.css'))
@@ -85,8 +90,13 @@ gulp.task('static', function() {
     .pipe(gulp.dest('temp/'))
 });
 
+gulp.task('static comp', function() {
+    return gulp.src(paths.static, {base: "src"})
+    .pipe(gulp.dest('temp/comp/'))
+});
+
 gulp.task('assets', ['static', 'scss', 'scripts']);
-gulp.task('assets comp', ['static', 'scss comp', 'scripts comp', 'bower comp']);
+gulp.task('assets comp', ['static comp', 'scss comp', 'scripts comp', 'bower comp']);
 gulp.task('dist', ['fingerprint', 'bower', 'index fingerprint']);
 
 gulp.task('fingerprint', ['clean','assets comp'], function () {
@@ -99,6 +109,18 @@ gulp.task('fingerprint', ['clean','assets comp'], function () {
         .pipe(rev.manifest())
         .pipe(gulp.dest('dist/assets')); // write manifest to build dir
 });
+
+gulp.task('fingerprint static', function () {
+    // by default, gulp would pick `assets/css` as the base,
+    // so we need to set it explicitly:
+    return gulp.src(paths.static, {base: 'src/asseets/'})
+        .pipe(gulp.dest('dist/assets/'))  // write rev'd assets to build dir
+        .pipe(rev())
+        .pipe(gulp.dest('dist/assets/'))  // write rev'd assets to build dir
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('dist/assets')); // write manifest to build dir
+});
+
 
 gulp.task('index fingerprint', ['fingerprint'], function() {
     // read in our manifest file

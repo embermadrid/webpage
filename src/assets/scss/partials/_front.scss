@@ -1,6 +1,6 @@
 /* general */
 
-body {      
+body {
 	font-size: 62.5%;
   font-family: $open;
   background: white;
@@ -9,16 +9,16 @@ body {
 
 /* links */
 
-a {      
+a {
 	color: $first;
 	&:hover {
    text-decoration: none
  }
 }
 
-/* general */      
+/* general */
 
-body { 
+body {
 	font-size: 62.5%;
   font-family: $open;
   background: white;
@@ -31,7 +31,7 @@ article {
   width: 100%;
   padding-top: 59px;
   section {
-    width: 45%; 
+    width: 45%;
     float: left;
     margin-right: 5%;
     &:last-child {
@@ -51,7 +51,7 @@ article {
   }
   &.welcome {
     height: 100%;
-    background: $ember url('../img/welcome-bck.jpg') fixed;
+    background: $ember url($welcome-back-url) fixed;
     background-size: cover;
     color: white;
     p.readmore {
@@ -112,7 +112,7 @@ article {
       width: 90%;
       max-width: 800px;
       margin: 0 auto;
-      overflow: hidden; 
+      overflow: hidden;
       p {
         line-height: 1.5em;
         font-size: 1.9em;
@@ -236,7 +236,7 @@ article {
         h5 {
           color: $ember;
           font-size: 2.2em;
-        } 
+        }
         p {
           margin: 15px 0;
           font-family: $open;
@@ -330,6 +330,3 @@ article {
     }
   }
 }
-
-
-

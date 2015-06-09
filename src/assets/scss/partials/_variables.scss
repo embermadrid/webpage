@@ -16,20 +16,15 @@ $roboto: 'Roboto', sans-serif;
 $open: 'Open Sans', sans-serif;
 $slackey: 'Amatic SC', cursive;
 
-/* sprite */
-
-.sprite {
-  background: transparent url('../img/sprite.png');
-}
 
 /* transitions */
 
 .t {
-	-webkit-transition: 0.2s ease-in;  
-	-moz-transition: 0.2s ease-in;  
-	-o-transition: 0.2s ease-in;  
+	-webkit-transition: 0.2s ease-in;
+	-moz-transition: 0.2s ease-in;
+	-o-transition: 0.2s ease-in;
 	transition: 0.2s ease-in;
-}                          
+}
 
 /* borders */
 
@@ -39,18 +34,18 @@ $slackey: 'Amatic SC', cursive;
   -ms-border-radius: $radius;
   -o-border-radius: $radius;
   border-radius: $radius;
-}   
-                  
-.rad { 
-  @include border-radius(4px); 
 }
 
-.btn-pay-border { 
-  @include border-radius(42px); 
+.rad {
+  @include border-radius(4px);
 }
 
-.circle { 
-	@include border-radius(100%); 
+.btn-pay-border {
+  @include border-radius(42px);
+}
+
+.circle {
+	@include border-radius(100%);
 }
 
 /* colors */
@@ -65,9 +60,9 @@ $paybutton: #3992f1; /* button pay */
 
 .up {
 	animation: ratata ease 1.3s both;
-	-webkit-animation: ratata ease 1.3s both;                             
-  -moz-animation: ratata ease 1.3s both;                  
-  -o-animation: ratata ease 1.3s both;   
+	-webkit-animation: ratata ease 1.3s both;
+  -moz-animation: ratata ease 1.3s both;
+  -o-animation: ratata ease 1.3s both;
 }
 
 @keyframes ratata  {
@@ -91,9 +86,9 @@ $paybutton: #3992f1; /* button pay */
 
 .hello {
 	animation: plas ease 1.3s both;
-	-webkit-animation: plas ease 1.3s both;                             
-  -moz-animation: plas ease 1.3s both;                  
-  -o-animation: plas ease 1.3s both;   
+	-webkit-animation: plas ease 1.3s both;
+  -moz-animation: plas ease 1.3s both;
+  -o-animation: plas ease 1.3s both;
 }
 
 @keyframes plas  {
