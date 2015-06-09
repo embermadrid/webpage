@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var minifyCss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var server = require('gulp-server-livereload');
 var sass = require('gulp-sass');
@@ -36,18 +37,30 @@ gulp.task('clean', function(cb) {
 
 gulp.task('bower', function() {
     return gulp.src(mainBowerFiles())
-    .pipe(uglify())
     .pipe(concat('vendor.min.js'))
     .pipe(gulp.dest('./temp/assets/js'));
+});
+
+gulp.task('bower comp', function() {
+    return gulp.src(mainBowerFiles())
+    .pipe(uglify())
+    .pipe(concat('vendor.min.js'))
+    .pipe(gulp.dest('./temp/comp/assets/js'));
 });
 
 gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
-        .pipe(uglify())
         .pipe(concat('app.min.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./temp/assets/js'));
+});
+gulp.task('scripts comp', function() {
+
+    return gulp.src(paths.scripts)
+    .pipe(uglify())
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest('./temp/comp/assets/js'));
 });
 
 gulp.task('scss', function() {
@@ -59,28 +72,37 @@ gulp.task('scss', function() {
     .pipe(gulp.dest('temp/assets/css'));
 });
 
+gulp.task('scss comp', function() {
+    return gulp.src(paths.scss)
+    .pipe(sass())
+    .pipe(minifyCss())
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('temp/comp/assets/css'));
+});
+
 gulp.task('static', function() {
     return gulp.src(paths.static, {base: "src"})
     .pipe(gulp.dest('temp/'))
 });
 
 gulp.task('assets', ['static', 'scss', 'scripts']);
+gulp.task('assets comp', ['static', 'scss comp', 'scripts comp', 'bower comp']);
 gulp.task('dist', ['fingerprint', 'bower', 'index fingerprint']);
 
-gulp.task('fingerprint', ['assets'], function () {
+gulp.task('fingerprint', ['clean','assets comp'], function () {
     // by default, gulp would pick `assets/css` as the base,
     // so we need to set it explicitly:
-    return gulp.src(['temp/assets/**/**/*'], {base: 'temp/assets'})
+    return gulp.src(['temp/comp/assets/**/**/*'], {base: 'temp/comp/assets'})
         .pipe(gulp.dest('dist/assets'))  // write rev'd assets to build dir
         .pipe(rev())
         .pipe(gulp.dest('dist/assets'))  // write rev'd assets to build dir
         .pipe(rev.manifest())
-        .pipe(gulp.dest('dist/')); // write manifest to build dir
+        .pipe(gulp.dest('dist/assets')); // write manifest to build dir
 });
 
 gulp.task('index fingerprint', ['fingerprint'], function() {
     // read in our manifest file
-    var manifest = JSON.parse(fs.readFileSync('./dist/rev-manifest.json', 'utf8'));
+    var manifest = JSON.parse(fs.readFileSync('./dist/assets/rev-manifest.json', 'utf8'));
 
     // read in our handlebars template, compile it using
     // our manifest, and output it to index.html
