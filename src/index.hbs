@@ -11,8 +11,8 @@
 	<!-- format scss -->
 	<link rel="stylesheet" href="{{assetPath "css/style.css"}}">
 	<!-- webfont google -->
-	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,100|Open+Sans:400,600|Amatic+SC' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100|Open+Sans:400,600|Amatic+SC' rel='stylesheet' type='text/css'>
 	<!-- Google Tag Manager -->
 	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5PTDZW"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -24,7 +24,7 @@
 	<!-- End Google Tag Manager -->
 </head>
 <body>
-	<aside class="popup-message">
+	<aside id="success-payment" class="popup-message" style="display: none;">
 		<section>
 			<div class="icon-detail icon-ok">
 			</div>
@@ -36,8 +36,21 @@
 			</p>
 		</seciton>
 	</aside>
+	<aside id="processing-payment" class="popup-message" style="display: none;">
+		<section>
+			<div class="icon-detail icon-loader">
+			</div>
+			<h4>
+				Realizando el pago.
+			</h4>
+			<p>
+				No cierre la página mientras se realiza el pago. En caso de que tarde demasiado contacte a
+				<a href="mailto: hola@embermadrid.com">hola@embermadrid.com</a>
+			</p>
+		</seciton>
+	</aside>
 	<!-- fin message ok -->
-	<aside class="popup-message">
+	<aside id="fail-payment" class="popup-message" style="display: none;">
 		<section>
 			<div class="icon-detail icon-error">
 			</div>
@@ -45,7 +58,6 @@
 				Algo ha fallado
 			</h4>
 			<p>
-				Añadir mensaje (enrique).
 			</p>
 		</seciton>
 	</aside>
@@ -136,9 +148,8 @@
 				</div>
 			</div><!-- two coloumns -->
 			<p class="pay-stripe">
-				<button disabled>
-					Proximamente
-					<s>Comprar 5€ / entrada</s>
+				<button>
+					Comprar 5€ / entrada
 				</button>
 				<div class="text-stripe">
 					<p>
