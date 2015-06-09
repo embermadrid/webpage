@@ -113,14 +113,30 @@ article {
       max-width: 800px;
       margin: 0 auto;
       overflow: hidden;
-      p {
-        line-height: 1.5em;
-        font-size: 1.9em;
-        color: $gris;
-        font-weight: 100;
-        &.pay-stripe {
-          span.stripe-partner {
-            padding-top: 10px;
+      .text-stripe {
+            p {
+              width: 90%;
+              text-align: center;
+              padding: 20px 0;
+              max-width: 230px;
+              font-size: 1.2em;
+              line-height: 0;
+              letter-spacing: 1px;
+              margin: 0 auto;
+               span.icon-security {
+                margin-bottom: -4px;
+                display: block;
+                width: 12px;
+                height: 12px;
+                text-indent: -9999px;
+                margin-right: 15px;
+                background: transparent url($ssl-icon) no-repeat;
+              }
+            }
+          }
+          .stripe-partner {
+            margin-top: 15px;
+            margin-bottom: 0;
             display: block;
             a {
               opacity: 0.6;
@@ -130,6 +146,12 @@ article {
               }
             }
           }
+      p {
+        line-height: 1.5em;
+        font-size: 1.9em;
+        color: $gris;
+        font-weight: 100;
+        &.pay-stripe {
           button {
             width: 90%;
             font-family: $open;
