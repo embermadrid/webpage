@@ -29,6 +29,7 @@ body {
 
 article {
   width: 100%;
+  padding-top: 59px;
   section {
     width: 45%; 
     float: left;
@@ -290,13 +291,13 @@ article {
     }
   }
   &.about {
+    padding: 50px 0;
     overflow: hidden;
     @extend .c;
     h2 {
       padding-top: $distance;
     }
     section {
-      margin-top: 100px;
       min-height: 270px;
       a {
         &.codecantor, &.people {
