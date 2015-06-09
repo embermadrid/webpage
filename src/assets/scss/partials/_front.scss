@@ -7,6 +7,53 @@ body {
   color: $first;
 }
 
+/* popup */
+
+aside.popup-message {
+  position: fixed;
+  z-index: 999999;
+  background: rgba(0,0,0,1);
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  section {
+    width: 600px;
+    padding: 50px 0;
+    max-width: 100%;
+    margin: 150px auto;
+    background: white;
+    @extend .rad;
+    .icon-detail  {
+      display: block;
+      width: 128px;
+      height: 128px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 20px;
+    }
+    .icon-error {
+      background: transparent url($icon-fail) no-repeat;
+    }
+    .icon-ok {
+      background: transparent url($icon-ok) no-repeat;
+    }
+    h4 {
+      padding-bottom: 10px;
+      font-size: 4em;
+    }
+    p {
+      font-size: 2em;
+      color: #888;
+    }
+    h4, p {
+      text-align: center;
+      width: 80%;
+      padding: 10px 0;
+      margin: 0 auto;
+    }
+  }
+}
 /* links */
 
 a {
