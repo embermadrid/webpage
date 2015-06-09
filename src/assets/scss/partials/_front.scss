@@ -152,11 +152,10 @@ article {
         color: $gris;
         font-weight: 100;
         &.plazas-limitadas {
-          padding-top: 40px;
           font-size: 2em;
           letter-spacing: 1px;
           font-family: $open;
-          text-decoration: underline;
+          text-transform: uppercase;
         }
         &.pay-stripe {
           button {
