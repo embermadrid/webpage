@@ -1,65 +1,61 @@
 footer {
-  padding: 50px 0;
+  font-family: $roboto;
+  padding: 25px 0;
   background: $ember;
   .credits {
-    color: white;
+    width: 90%;
+    max-width: 300px;
+    padding: 100px 0;
     font-size: 1.2em;
+    font-style: italic;
     text-align: center;
-    a {
-      padding: 0 4px;
-      opacity: 0.6;
+    margin: 0 auto;
+    opacity: 0.6;
+    padding-bottom: 50px;
+    @extend .t;
+    &:hover {
+      opacity: 0.9;
+    }
+    p {
       color: white;
-      @extend .t;
-      &:hover {
-        opacity: 1;
+      padding: 5px 0;
+      margin: 0;
+      a {
+        color: white;
       }
     }
   }
-  ul {
-    @extend .c;
+  .grid-footer {
+    width: 90%;
+    padding-top: 50px;
+    max-width: 900px;
+    margin: 0 auto;
     overflow: hidden;
-    li {
-      font-family: $roboto;
-      letter-spacing: 1px;
-      width: 33%;
-      font-weight: 100;
+    section {
+      width: 35%;
       float: left;
-      text-align: center;
-      text-transform: uppercase;
-      color: white;
+      margin-right: 30%;
       &:last-child {
-        margin-right: 0 !important;
+        margin-right: 0;
       }
-      a {
-        margin-bottom: 10px;
-        display: block;
-        border-color: white;
+      h3 {
+          color: white;
+          padding: 30px 0;
+          border-top: 1px solid white;
+          font-size: 2.5em;
+      }
+      p, ul {
+        font-size: 1.4em;
+        line-height: 1.6em;
         color: white;
-        &.emberfot {
-          @extend .sprite;
-          text-indent: -9999px;
-          width: 230px;
-          height: 225px;
-          background-position: 15px 0;
+        a {
+          color: white;
+          text-decoration: underline;
         }
-        &.tw, &.mt {
-          width: 220px;
-          margin: 25% auto 10px auto;
-          padding: 20px 0;
-          border: 2px solid white;
-          text-indent: -99999px;
-          @extend .rad;
-          @extend .sprite;
-          @extend .t;
-          &:hover {
-            background-color: black;
-          }
-        }
-        &.tw {
-          background-position: -424px -82px;
-        }
-        &.mt {
-          background-position: -639px -79px;
+      }
+      ul {
+        li {
+          padding-bottom: 5px;
         }
       }
     }

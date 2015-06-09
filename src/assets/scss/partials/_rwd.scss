@@ -16,6 +16,29 @@
 
 
 @media only screen and (max-width: 768px) {    
+footer {
+  .credits {
+    padding: 25px 0 !important;
+  }
+  .grid-footer {
+  section {
+    width: 100% !important;
+    float: none !important;
+    padding-bottom: 50px;
+    ul {
+      li {
+        margin-bottom: 10px;
+        a {
+          display: block;
+          padding: 20px 0;
+          text-align: center;
+          background: rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}
+}
 .two-content {
         .two-content-box {
           width: 100% !important;
