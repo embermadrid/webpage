@@ -1,10 +1,10 @@
 $(function() {
     var handler = StripeCheckout.configure({
-        key: 'pk_test_hPcrVWUXFGuto5XNvj25Uwnc',
+        key: 'pk_live_B2ZMFvZ49OKRZciS3PHtDiQW',
         image: '/assets/img/emberjs.png',
     });
 
-    $('.pay-stripe disabled').on('click', function(e) {
+    $('.pay-stripe button').on('click', function(e) {
         // Open Checkout with further options
         handler.open({
             name: 'EmberMadrid',
