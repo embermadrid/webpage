@@ -16,6 +16,12 @@
 
 
 @media only screen and (max-width: 768px) {    
+  article.welcome {
+    padding-top: 20px !important;
+    .title {
+      padding-top: 0 !important;
+    }
+  }
 footer {
   .credits {
     padding: 25px 0 !important;
