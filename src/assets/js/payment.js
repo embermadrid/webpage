@@ -4,7 +4,7 @@ $(function() {
         image: '/assets/img/emberjs.png',
     });
 
-    $('.pay-stripe button').on('click', function(e) {
+    $('.pay-stripe disabled').on('click', function(e) {
         // Open Checkout with further options
         handler.open({
             name: 'EmberMadrid',
