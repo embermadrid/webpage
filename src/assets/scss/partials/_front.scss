@@ -29,7 +29,8 @@ body {
 
 article {
   width: 100%;
-  padding-top: 59px;
+  padding-bottom: 60px;
+  padding-top: 60px;
   section {
     width: 45%;
     float: left;
@@ -106,7 +107,6 @@ article {
     }
   }
   &.now {
-    padding: $distance 0;
     text-align: center;
     .meetup {
       width: 90%;
@@ -151,6 +151,13 @@ article {
         font-size: 1.9em;
         color: $gris;
         font-weight: 100;
+        &.plazas-limitadas {
+          padding-top: 40px;
+          font-size: 2em;
+          letter-spacing: 1px;
+          font-family: $open;
+          text-decoration: underline;
+        }
         &.pay-stripe {
           button {
             width: 90%;
