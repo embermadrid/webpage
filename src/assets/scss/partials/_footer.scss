@@ -2,6 +2,11 @@ footer {
   font-family: $roboto;
   padding: 25px 0;
   background: $ember;
+  a {
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
   .credits {
     width: 90%;
     max-width: 300px;
