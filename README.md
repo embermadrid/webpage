@@ -1,4 +1,4 @@
-# Página web EmberMadrid 
+# Landing page embermadrid.com
 
 ## Uso
 Tienes que tener instalado `node`, `npm` y `bower`. Pasos a seguir:
